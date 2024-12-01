@@ -39,7 +39,7 @@ months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec
 c_1, c_2 = st.columns((8,4))
 c_2.image('growealth-logo_long.png', width=300)
 
-st.markdown('<p style="font-size:36px;font-weight: bold;text-align:center;vertical-align:middle;color:blue;margin:0px;padding:0px">Growealth Operations</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size:36px;font-weight: bold;text-align:center;vertical-align:middle;color:blue;margin:0px;padding:0px">Growealth Dashboard</p>', unsafe_allow_html=True)
 
 
 st.cache_data()
