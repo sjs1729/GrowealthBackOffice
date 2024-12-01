@@ -5,6 +5,9 @@ import datetime as dt
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.express as px
+from scipy import optimize
+import math
+import time
 from shared_functions import *
 from db_functions import *
 
@@ -192,7 +195,7 @@ fig1.update_layout(title_text=f"Commission by AMC for {slider_date.strftime('%b 
                   title_y=1,
                   title_font_size=16,
                   xaxis_title="Fund Houses",
-                  yaxis_title="Monthly Commission ('000')")
+                  yaxis_title="Commission ('000')")
 
 fig1.update_layout(margin=dict(l=1,r=1,b=1,t=18))
 fig1.update_xaxes(showgrid=True)
@@ -208,3 +211,34 @@ fig1.update_layout(legend=dict(
     ))
 
 st.plotly_chart(fig1, use_container_width=True)
+
+
+st.write("----------------")
+
+df_aum_2 = df_aum[df_aum.index == slider_date][report_columns].transpose()
+
+#st.write(df_comm_2)
+
+
+fig2 = px.bar(df_aum_2)
+fig2.update_layout(title_text=f"AUM by AMC for {slider_date.strftime('%b %y')}",
+                  title_x=0.4,
+                  title_y=1,
+                  title_font_size=16,
+                  xaxis_title="Fund Houses",
+                  yaxis_title="AUM ('000')")
+
+fig2.update_layout(margin=dict(l=1,r=1,b=1,t=18))
+fig2.update_xaxes(showgrid=True)
+fig2.update_layout(legend_title='')
+fig2.update_layout(showlegend=False)
+fig2.update_layout(height=350)
+fig2.update_layout(width=550)
+fig2.update_layout(legend=dict(
+        yanchor="bottom",
+        y=0.9,
+        xanchor="left",
+        x=0.05
+    ))
+
+st.plotly_chart(fig2, use_container_width=True)
