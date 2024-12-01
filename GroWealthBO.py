@@ -109,6 +109,10 @@ report_columns = ['Axis', 'Canara Robeco', 'HDFC', 'ICICI Prudential', 'Kotak',
        'Mirae', 'Nippon India', 'PGIM India', 'SBI', 'Quant', 'Motilal Oswal',
        'HSBC', 'UTI','PARAG PARIKH']
 
+report_columns_2 = ['Axis', 'Canara Robeco', 'HDFC', 'ICICI Prudential', 'Kotak',
+       'Mirae', 'Nippon India', 'PGIM India', 'SBI', 'Quant', 'Motilal Oswal',
+       'HSBC', 'UTI','Parag Parikh']
+
 
 date_options = [i for i in df_comm.index[11:]]
 
@@ -214,8 +218,7 @@ st.plotly_chart(fig1, use_container_width=True)
 
 
 st.write("----------------")
-
-df_aum_2 = df_aum[df_aum.index == slider_date][report_columns].transpose()
+df_aum_2 = df_aum[df_aum.index == slider_date][report_columns_2].transpose()
 
 #st.write(df_comm_2)
 
