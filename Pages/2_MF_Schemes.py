@@ -5,10 +5,6 @@ import datetime as dt
 import plotly.graph_objects as go
 #from plotly.subplots import make_subplots
 import plotly.express as px
-from scipy.optimize import minimize
-from scipy import optimize
-import random
-import math
 from shared_functions import *
 from db_functions import *
 
