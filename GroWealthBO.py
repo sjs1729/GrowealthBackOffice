@@ -226,7 +226,7 @@ fig2.update_layout(title_text=f"AUM by AMC for {slider_date.strftime('%b %y')}",
                   title_y=1,
                   title_font_size=16,
                   xaxis_title="Fund Houses",
-                  yaxis_title="AUM ('000')")
+                  yaxis_title="AUM (Cr)")
 
 fig2.update_layout(margin=dict(l=1,r=1,b=1,t=18))
 fig2.update_xaxes(showgrid=True)
